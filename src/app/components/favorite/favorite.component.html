@@ -1,0 +1,10 @@
+<div class="row">
+        <form *ngFor="let a of favori">
+                <i (click)=" setFavoris()"
+                [ngClass]="{ 'fa-star': favoris, 'fa-star-o': !favoris }" 
+                class="fa fa-star" 
+                style="font-size:16px">
+        </i>
+        </form>
+</div>
+

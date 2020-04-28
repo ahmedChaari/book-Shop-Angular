@@ -1,0 +1,20 @@
+a{
+    color: white;
+}
+.page-footer{
+    background-color: #007bff;
+    margin-top: 100%;
+}
+
+@media (max-width: 640px) {
+    .page-footer{
+       display: none
+    }
+    
+  }
+  @media (max-width: 768px) {
+    .page-footer{
+       display: none
+    }
+
+}

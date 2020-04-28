@@ -1,0 +1,10 @@
+.form-control {
+    margin-bottom: 17px;
+}
+
+.insert{
+    float: right;
+    margin: 6px 49px;
+    color: #49cc1f;
+    font-weight: bold;
+}

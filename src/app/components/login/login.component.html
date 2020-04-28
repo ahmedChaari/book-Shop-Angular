@@ -1,0 +1,24 @@
+<div class="body">
+    <h2 class="text-center">LOGIN</h2>
+    <!-- Pour faire une validition on ajoute "ngMode + name=- le nom de input-" -->
+
+                 <form #f="ngForm" (ngSubmit)="login(f)">      
+                        <input ngModel name="email" #email="ngModel" type="email" class="form-control" placeholder="Email" required email>
+                            <div class="alert alert-danger" *ngIf="email.touched && email.errors?.required" >Email Is Required</div>
+                            <div class="alert alert-danger" *ngIf="email.touched && email.errors?.email" >Your Email doesn't match email format</div>
+
+                        <input ngModel name="password"
+                                    #password="ngModel" type="password" class="form-control" placeholder="Password" required minlength="6">
+                                     <div class="alert alert-danger" *ngIf="password.touched && password.errors?.required" >password Is Required</div>
+                                     <div class="alert alert-danger" *ngIf="password.touched && password.errors?.minlength" >your Password you shoud be +6 characters</div>    
+                        <button class="btn btn-outline-primary my-2 my-sm-0" 
+                                    [disabled]="f.invalid">
+                                               Login Account
+                        </button>
+                      
+                        <a routerLink="/signup" class="btn btn-outline-success float-right">
+                            <i class="fa fa-user-plus" aria-hidden="true"></i>
+                            Inscription</a>
+                        <label class="insert">C’est gratuit (et ça le restera toujours)</label><br>
+                </form>
+</div>

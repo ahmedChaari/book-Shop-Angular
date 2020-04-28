@@ -1,0 +1,62 @@
+<div  #content class="content">
+    <div class="container">
+        <div class="row">
+            <div class="alert alert-danger"><strong>
+                    <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+                    Cette Approvisionnement à une période de 7 jours pour le supprimer definitvement
+            </strong></div>
+                
+            <table class="table">
+                <thead>
+                    <td></td>
+                    <td>name</td>
+                    <td>price</td>
+                    <td>Amount</td>
+                    <td>Total</td>
+                    <td>Options</td>
+                </thead>
+                <tbody>
+                   <tr *ngFor="let good of cart; index as i"> 
+
+                      <!--   <tr *ngFor="let good of cart; index as i | yourfilterChain;let price=price;let sum=ngForOf.reduce((a,b)=>a+b,0)"> -->
+
+                        <td>
+                                <img class="card-img-top" [src]="good.photoUrl" alt="Card image cap">
+                        </td>
+                        <td>{{ good.name }}</td>
+                        <td>{{ good.price | currency }}</td>
+                        <td>
+                            <input type="number" placeholder="Amount (kg)" [(ngModel)]="good.amount">
+                        </td>
+                        <td>{{ good.price * good.amount | currency }}DH</td>
+                        <td>
+                            <button title="Update card" class="btn btn-outline-primary" (click)="save(i)">
+                                    <i class="fa fa-floppy-o" aria-hidden="true"></i>
+                            </button>
+                            <button title="Delete card" class="btn btn-outline-danger" (click)="delete(i)">
+                                    <i class="fa fa-trash-o" aria-hidden="true"></i>
+                            </button>
+                        </td>      
+                    </tr>
+                    <tr>
+                        
+                        
+                        <td>
+                            ${{ getTotal() }}
+                        </td>
+                        <td colspan="4">
+
+
+                                
+
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+       
+    </div>
+    
+    <button class="btn btn-info" (click)="makePdf()">Get Your Pdf</button>
+    
+</div>

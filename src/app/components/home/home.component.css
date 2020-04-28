@@ -1,0 +1,11 @@
+.card-img-top {
+    height: 200px;
+    padding: 3px 3px;
+    width: 100%;
+}
+.card{
+    margin-top: 12px;
+}
+h5{
+    height: 43px;
+}

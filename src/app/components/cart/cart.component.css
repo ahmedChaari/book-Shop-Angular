@@ -1,0 +1,23 @@
+.card-img-top{
+    width: 42px;
+}
+p {
+    font-family: Lato;
+  }
+  
+
+input {
+    text-align: center;
+    color: #1f07e4;
+}
+
+  .content {
+    background: #fff;
+  }
+  .alert-danger{
+      width: 100%;
+      margin-top: 18px;
+  }
+  button{
+    margin-left: 5px;
+}

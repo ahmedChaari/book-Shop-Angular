@@ -1,0 +1,33 @@
+<div class="body">
+    <h2 class="text-center">Sing Up</h2>
+    <!-- Pour faire une validition on ajoute "ngMode + name=- le nom de input-" -->
+                 <form #f="ngForm" (ngSubmit)="signup(f)">
+                        <input ngModel name="name" #name="ngModel" type="text" class="form-control" placeholder="your name" required>
+                            <div class="alert alert-danger" *ngIf="name.invalid && name.touched" >Name Is Required</div>
+
+                        <input ngModel name="email" #email="ngModel" type="email" class="form-control" placeholder="Email" required email>
+                            <div class="alert alert-danger" *ngIf="email.touched && email.errors?.required" >Email Is Required</div>
+                            <div class="alert alert-danger" *ngIf="email.touched && email.errors?.email" >Your Email doesn't match email format</div>
+
+                        <input ngModel name="password"
+                                    #password="ngModel" type="password" class="form-control" placeholder="Password" required minlength="6">
+                                     <div class="alert alert-danger" *ngIf="password.touched && password.errors?.required" >password Is Required</div>
+                                     <div class="alert alert-danger" *ngIf="password.touched && password.errors?.minlength" >your Password you shoud be +6 characters</div>
+
+                        <input ngModel name="passwordConfirm"
+                                              #passwordConfirm="ngModel" type="password" class="form-control" placeholder="Confirm password" required>
+                                <div class="alert alert-danger" *ngIf="passwordConfirm.invalid && passwordConfirm.touched" >password Is required</div>
+                                <div class="alert alert-danger" *ngIf="password.value !== passwordConfirm.value && passwordConfirm.touched" >
+                                    Password ARE NOT EQUAL</div>
+
+                        <input ngModel name="address" #address="ngModel" type="text" class="form-control" placeholder="Address" required>
+                                <div class="alert alert-danger" *ngIf="address.invalid && address.touched" >Address Is Required</div>
+
+                        <button class="btn btn-outline-primary my-2 my-sm-0" 
+                                    [disabled]="f.invalid || password.value !== passwordConfirm.value">
+                                               Create Account
+                        </button>
+                </form>
+                <div class="alert alert-danger" *ngIf="errorMessage">{{ errorMessage }}</div>
+        
+</div>

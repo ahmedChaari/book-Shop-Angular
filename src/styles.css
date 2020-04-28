@@ -1,0 +1,14 @@
+.route-container{
+    position: relative;
+}
+.route-container > * {
+    position: absolute;
+    top:0;
+    left:0;
+    right: 0;
+}
+body{
+    overflow-x: hidden
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
